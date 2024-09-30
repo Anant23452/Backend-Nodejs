@@ -132,18 +132,77 @@ const app = express()
 
 
 // ejs ka use kaise karna hota hai 
-app.set('view engine','ejs');
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
 
-app.get('/',function(req,res){
-  res.render("index")
-}) 
-app.post('/must',function(req,res){
-  console.log(req.body);//tabhi work karge jab uper use wala dono likha hoga 
-  res.send("Working")
-}) 
+
+
+// app.set('view engine','ejs');
+// app.use(express.json());
+// app.use(express.urlencoded({extended:true}));
+
+// app.get('/',function(req,res){
+//   res.render("index")
+// }) 
+// app.post('/must',function(req,res){
+//   console.log(req.body);//tabhi work karge jab uper use wala dono likha hoga 
+//   res.send("Working")
+// }) 
+// app.put('/must',function(req,res){
+//   console.log(req.body);//tabhi work karge jab uper use wala dono likha hoga 
+//   res.send("Working")
+// }) 
+// app.patch('/must',function(req,res){
+//   console.log(req.body);//tabhi work karge jab uper use wala dono likha hoga 
+//   res.send("Working")
+// }) 
 // app.get('/profile',function(req,res){
 //   res.render("profile.ejs")
 // })
+
+
+
+
+
+
+
+
+
+
+// Error handling 
+// app.get('/',function(req,res,next){
+//  try{
+//   res.render(hey)
+//  }
+//  catch(err){
+//   next(err);
+//  }
+// }) 
+// app.use((err,req,res,next)=>{
+//   res.status(500).send(err.message);
+// })
+
+
+
+
+// Postman basic get 
+
+var arr =[1,2,3,,4,5];
+// app.get("/",function(req,res){
+//   res.send("hellow world");
+// });
+// app.get("/arr",function(req,res){
+//   res.send(arr);
+// });
+// app.post('/arr/:number',(req,res)=>{
+// arr.push(parseInt(req.params.number));
+// res.send(arr);
+// })
+
+
+
+
+// postman variable 
+app.get("/api/testing",(req,res)=>{
+  res.send("Heloo world");
+})
+
 app.listen(3000); 
